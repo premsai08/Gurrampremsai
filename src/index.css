@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top right, rgba(124, 104, 255, 0.18), transparent 24%),
+    radial-gradient(circle at left bottom, rgba(0, 255, 255, 0.12), transparent 24%),
+    linear-gradient(180deg, #03040f 0%, #070c16 100%);
+}
+
+.perspective-wrapper {
+  perspective: 1800px;
+  perspective-origin: top right;
+}
+
+.perspective-card {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+}
+
+.perspective-card:hover {
+  transform: translateZ(0) rotateY(-1.5deg) scale(1.01);
+}
+
+@layer utilities {
+  .bg-slate-950\/95 {
+    background-color: rgba(15, 23, 42, 0.95);
+  }
+}
